@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.calculator{
+    width: 325px;
+    height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 20px 20px 70px 70px;
+}
+
+.screen{
+    width: 85%;
+    height: 20%;
+    background-color: rgba(127, 148, 226, 0.38);
+    border: 1px solid rgb(205, 205, 205);
+    margin-top: 14%;
+    margin-bottom: 3%;
+    border-radius: 5px 5px 2px 2px;
+    position: relative;
+    top: -18px;
+    color: rgb(15, 15, 15);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-line{
+    border: 1px solid black;
+    height: 12px;
+}
+
+.active-screen{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    padding: 1px;
+}
+
+.onScreen{
+    background-color: rgba(151, 153, 162, 0.38);
+    height: 100%;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+
+.active-screen div{
+    border: 1px solid black;
+    height: 36.3px;
+}
+
+#cursor{
+    font-size: 1.2rem;
+}
+
+.top-buttons{
+    display: flex;
+    font-size: 8px;
+    position: relative;
+    top: -15px;
+}
+
+.top-buttons div{
+    display: flex;
+    flex-direction: column;
+}
+
+#up-nav{
+    padding: 5px;
+    width: 2px;
+    border-radius: 10px 10px 0px 0px;    
+    position: relative;
+    left: 20px;
+    top: -8px;
+}
+
+button{
+    cursor: pointer;
+}
+
+#left-nav{
+    position: relative;
+    top: 18px;
+    left:-20px;
+    padding: 5.5px;
+    width: 2px;
+    height: 12px;
+    border-radius: 10px 0px 0px 10px;
+}
+
+#right-nav{
+    position: relative;
+    top: -52px;
+    left: 58px;
+    padding: 5.5px;
+    width: 1.2px;
+    height: 10px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#down-nav{
+    position: relative;
+    top: -32px;
+    left: 19px;
+    padding: 5px;
+    width: 2px;
+    height: 12px;
+    border-radius: 0px 0px 10px 10px;   
+}
+
+#select{
+    padding: 25px;
+    border-radius: 100px;
+    height: 50px;
+    position: relative;
+    top: -19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
+
+.top-buttons button{
+    padding: 12px;
+    width: 30px;
+    background-color: rgba(5, 7, 135, 0.843);
+    border-radius: 50px;
+}
+
+
+#shift{
+    position: relative;
+    left: -67px;
+    bottom: -5px;
+}
+
+#alpha{
+    position: relative;
+    top: -40px;
+    left: -25px;
+}
+
+#settings{
+    position: relative;
+    top: -40px;
+    left: -38px;
+}
+
+#on-off{
+    position: relative;
+    right: -80px;
+    bottom: -5px;
+}
+
+#mode{
+    position: relative;
+    top: -40px;
+    right: -30px;
+}
+
+#unit{
+    position: relative;
+    top: -42px;
+    right: -50px;
+}
+
+.mid-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    top: -35px;
+}
+
+.mid-buttons-line4{
+    position: relative;
+    top: 2px;
+}
+
+.mid-buttons-line1{
+    position: relative;
+    top: -8px;
+}
+
+.mid-buttons-line2{
+    position: relative;
+    top: -4px;
+}
+
+.mid-buttons-line3{
+    position: relative;
+    top: -2px;
+}
+
+.mid-buttons div{
+    display: flex;
+    gap: 10px;
+}
+
+.mid-buttons button{
+    width: 42px;
+    height: 26px;
+    border-radius: 7px 8px 6px 8px;
+    background-color: rgb(33, 33, 33);
+    justify-content: space-evenly;
+    align-content: space-between;
+    color: rgb(255, 255, 255);
+    outline: rgba(16, 115, 113, 0.314) solid 0.4px;
+}
+
+.bottom-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    top: -16px;
+}
+
+
+.bottom-buttons button{
+    width: 52px;
+    margin: 0px 5px;
+    height: 36px;
+    border-radius: 7px 8px 6px 8px;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    outline: rgba(16, 115, 113, 0.314) solid 0.4px;
+}
+
+.orange button{
+    background-color: mediumaquamarine;   
+    color: black;
+    font-weight:900;
+    outline: none;
+}
+
+.bottom-buttons div{
+    display: flex;
+}
+
+.arithmatic-op button{
+    /* background-color: mediumpurple; */
+    /* color: black; */
+    font-weight: 900;
+}

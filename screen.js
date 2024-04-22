@@ -15,7 +15,11 @@ export class Screen{
 
         this.topScreenSection = 
         document.querySelector(".top-screen-section");
-}
+        this.cursor = document.createElement("span");
+        this.cursor.setAttribute("id","cursor");
+        this.cursor.innerHTML = "|";
+        
+    }
 
     getScreenFunction(functionName){
         return this.screenFunctions[functionName];
@@ -28,7 +32,7 @@ export class Screen{
     }
 
     turnTheScreenOn(){
-        this.activeScreen.setAttribute("class", "onScreen");//top-screen-section onScreen
+        this.activeScreen.setAttribute("class", "onScreen");
     }
 
     turnTheScreenOff(){
@@ -36,12 +40,10 @@ export class Screen{
     }
 
     addCursor(){
-        this.topScreenSection.innerHTML += 
-        this.topScreenSection.innerHTML+"<span id='cursor'>|</span>";       
+        this.topScreenSection.appendChild(this.cursor);       
     }
 
     removeCursor(){
-        let cursor = document.querySelector("#cursor");
         cursor.remove();
     }
 
@@ -50,9 +52,33 @@ export class Screen{
         this.turnTheScreenOn();
     }
 
+    clearScreen(){
+        this.topScreenSection.innerHTML = "";
+        this.addCursor();
+    }
+
     turnOff(){
-        this.removeCursor();
+        this.clearScreen();
         this.turnTheScreenOff();       
+    }
+
+    delete(){
+        /*this is the simple version of the delete functionality */
+        this.removeCursor();
+        let text = this.topScreenSection.innerHTML;
+        if(text.length===0){
+            this.addCursor();
+            return;
+        }
+        //needs change
+        this.topScreenSection.innerHTML = text.substring(0,text.length-1);
+        this.addCursor();
+    }
+
+    writeOnScreen(text){
+        this.removeCursor();
+        this.topScreenSection.innerHTML += text;
+        this.addCursor();              
     }
 
     turnOnOrOff(){
@@ -60,7 +86,6 @@ export class Screen{
             this.turnOn();
             return;
         }
-        console.log("turning screen on...",this.screenFunctions["isOn"])
         this.turnOff();
     }
 }

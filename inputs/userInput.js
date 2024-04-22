@@ -1,4 +1,5 @@
 import { Screen } from "../screen.js";
+
 export class InputProcessor{
     static commands = ["=","delete","clear","down","right",
                         "select","left","up","shift","alpha",
@@ -25,6 +26,7 @@ export class InputProcessor{
             this.doCommand(userInput);
             return;
         }
+        this.screen.writeOnScreen(userInput);
     }
 
     doCommand(commandName){
@@ -37,8 +39,10 @@ export class InputProcessor{
             case "=":
                 break;
             case "delete":
+                this.screen.delete();
                 break;
             case "clear":
+                this.screen.clearScreen();
                 break;
             case "up":
                 break;
